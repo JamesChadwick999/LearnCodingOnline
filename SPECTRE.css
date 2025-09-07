@@ -133,7 +133,8 @@
         transform:translate(var(--x), var(--y)) scale(0.3);
     }
 }
-.testimonial-section{
+.slider {
+    position: relative;
     bottom:40px;
     margin-left:50%;
     margin-top: 100px;
@@ -146,29 +147,48 @@
     border: radius 10px;
     padding:20px;
     box-shadow:0 0 20px rgb(0, 5, 5);
+    height:250px;
 }
-.testinomial{
+#name{
+    font-size: 30px;
+}
+.slide {
     display:none;
     opacity:5;
     transition:opacity 1s ease;
 }
-.testimonial-active{
-    display:block;
-    opacity:1;    
+.slide.active {
+    display: block;
+    animation: fade 0.6s ease-in-out;
+}
+@keyframes fade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.dots {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.dot.active {
+    background: #333;
+    width: 14px;
+    height: 14px;
 }
 .profile-section{
     display:flex;
     align-items: center;
-}
-#testimonial-text{
-    min-height: 60px;
-    font-size:30px;
-    margin-bottom: 15px;
-    line-height:1.5;
-}
-.btn:hover{
-    background:black;
-    color:white;
 }
 #profile-pic{
     width:100px;
@@ -179,26 +199,22 @@
     box-shadow:0 0 8px rgb(0, 5, 5);
     margin-right: 30px;
 }
-#name{
-    font-size: 25px;
+#testimonial-text{
+    min-height: 60px;
+    font-size:30px;
+    margin-bottom: 15px;
+    line-height:1.5;
 }
-.dots{
-    margin-top: 15px;
-    display:flex;
-    justify-content: center;
-    gap:15px;
+.one:hover{
+    animation:float 1s ease-in-out infinite;
 }
-.dot{
-    width:10px;
-    height:10px;
-    background:black;
-    border-radius: 50%;
-    cursor:pointer;
-    transition: background-color 0.3s ease;
-}
-.dot:active{
-    background:wheat;
-    box-shadow:0 0 4px black;
+@keyframes float {
+    0%, 100% {
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
 }
 }
 
@@ -389,7 +405,8 @@
         transform:translate(var(--x), var(--y)) scale(0.3);
     }
 }
-.testimonial-section{
+.slider {
+    position: relative;
     bottom:40px;
     margin-left:50%;
     margin-top: 100px;
@@ -402,29 +419,48 @@
     border: radius 10px;
     padding:20px;
     box-shadow:0 0 20px rgb(0, 5, 5);
+    height:250px;
 }
-.testinomial{
+#name{
+    font-size: 25px;
+}
+.slide {
     display:none;
     opacity:5;
     transition:opacity 1s ease;
 }
-.testimonial-active{
-    display:block;
-    opacity:1;    
+.slide.active {
+    display: block;
+    animation: fade 0.6s ease-in-out;
+}
+@keyframes fade {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.dots {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+}
+.dot {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin: 0 4px;
+    background: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+.dot.active {
+    background: #333;
+    width: 14px;
+    height: 14px;
 }
 .profile-section{
     display:flex;
     align-items: center;
-}
-#testimonial-text{
-    min-height: 60px;
-    font-size:22px;
-    margin-bottom: 15px;
-    line-height:1.5;
-}
-.btn:hover{
-    background:black;
-    color:white;
 }
 #profile-pic{
     width:70px;
@@ -435,26 +471,24 @@
     box-shadow:0 0 8px rgb(0, 5, 5);
     margin-right: 30px;
 }
-#name{
-    font-size: 27px;
+#testimonial-text{
+    min-height: 60px;
+    font-size:22px;
+    margin-bottom: 15px;
+    line-height:1.5;
+}   
+.one.animate{
+    opacity:1;
+    transform: translateY(0);
+    animation: float 1s ease-in-out infinite;
 }
-.dots{
-    margin-top: 15px;
-    display:flex;
-    justify-content: center;
-    gap:15px;
-}
-.dot{
-    width:10px;
-    height:10px;
-    background:black;
-    border-radius: 50%;
-    cursor:pointer;
-    transition: background-color 0.3s ease;
-}
-.dot:active{
-    background:wheat;
-    box-shadow:0 0 4px black;
+@keyframes float {
+    0%, 100% {
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
 }
 }
 

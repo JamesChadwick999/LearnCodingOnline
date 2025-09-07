@@ -114,3 +114,20 @@ IntersectionObserver(entries => {
 
 floatBoxes.forEach(box =>
 observer.observe(box));
+
+
+const floatBoxe = document.querySelectorAll('.box');
+
+const observe = new
+IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    } else {
+      entry.target.classList.remove('animate');
+    }
+  });
+}, { threshold: 0.5});
+
+floatBoxe.forEach(box =>
+observe.observe(box));

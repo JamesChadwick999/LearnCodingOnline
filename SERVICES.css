@@ -147,7 +147,7 @@
 }
 .modal-content{
     background:white;
-    padding:20px;
+    padding:30px;
     width:100%;
     max-width:680px;
     animation: fadeIn 0.3s ease-in-out;
@@ -377,7 +377,7 @@ li{
 }
 .modal-content{
     background:white;
-    padding:20px;
+    padding:30px;
     width:100%;
     max-width:680px;
     animation: fadeIn 0.3s ease-in-out;

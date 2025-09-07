@@ -127,6 +127,17 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 2px;
 }
+.hello:hover{
+    animation:float 1s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
 }
 
 
@@ -279,6 +290,19 @@
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 2px;
+}
+.hello.animate{
+    opacity:1;
+    transform: translateY(0);
+    animation: float 1s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
 }
 }
 

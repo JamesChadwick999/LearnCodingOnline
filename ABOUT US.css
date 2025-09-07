@@ -166,6 +166,17 @@
     width:200px;
     height:150px;
 }
+.box:hover{
+    animation:float 1s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
+}
 }
 
 
@@ -384,5 +395,18 @@
 .m{
     width:150px;
     height:150px;
+}
+.box.animate{
+    opacity:1;
+    transform: translateY(0);
+    animation: float 1s ease-in-out infinite;
+}
+@keyframes float {
+    0%, 100% {
+        transform:translateY(0);
+    }
+    50%{
+        transform: translateY(-20px);
+    }
 }
 }

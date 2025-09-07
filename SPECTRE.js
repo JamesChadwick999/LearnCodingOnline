@@ -30,31 +30,48 @@ function createFireworkInBox() {
 setInterval(createFireworkInBox, 1200);
 
 
-const testimonials = document.querySelectorAll('.testimonial');
-const dots = document.querySelectorAll('.dot');
+    let currentIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    const dots = document.querySelectorAll(".dot");
 
-let current = 0;
- 
-function showSlide(index) {
-  testimonials.forEach((t, i) => {
-    t.classList.remove('active');
-    dots[i].classList.remove('active');
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === index);
+        dots[i].classList.toggle("active", i === index);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = (currentIndex + 1) % slides.length;
+      showSlide(currentIndex);
+    }
+
+    // Auto slide every 4s
+    setInterval(nextSlide, 6000);
+
+    // Dot click functionality
+    dots.forEach((dot, i) => {
+      dot.addEventListener("click", () => {
+        currentIndex = i;
+        showSlide(currentIndex);
+      });
+    });
+
+
+
+
+const floatBoxes = document.querySelectorAll('.one');
+
+const observer = new
+IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    } else {
+      entry.target.classList.remove('animate');
+    }
   });
+}, { threshold: 0.5});
 
-  testimonials[index].classList.add('active');
-  dots[index].classList.add('active');
-  current = index;
-}
-
-function nextSlide() {
-  let next = (current + 1) % testimonials.length;
-  showSlide(next);
-}
-
-function goTo(index) {
-  showSlide(index);
-}
-
-setInterval(nextSlide, 3000);
-
-
+floatBoxes.forEach(box =>
+observer.observe(box));
