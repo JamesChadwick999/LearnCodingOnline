@@ -162,11 +162,11 @@
     width:10px;
 }
 .modal-content::-webkit-scrollbar-thumb{
-    background:wheat;
+    background:grey;
     border-radius: 12px;
 }
 .modal-content::-webkit-scrollbar-thumb:hover{
-    background:rgb(235, 206, 152);
+    background:black;
 }
 .close{
     position:absolute;
@@ -392,11 +392,11 @@ li{
     width:10px;
 }
 .modal-content::-webkit-scrollbar-thumb{
-    background:wheat;
+    background:grey;
     border-radius: 12px;
 }
 .modal-content::-webkit-scrollbar-thumb:hover{
-    background:rgb(235, 206, 152);
+    background:black;
 }
 .close{
     position:absolute;
